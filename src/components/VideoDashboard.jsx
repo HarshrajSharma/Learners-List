@@ -42,10 +42,10 @@ let [embedLink, setEmbedLink]= "";
 function VidButton(bu){
 
     
-    let url="https://youtube.googleapis.com/youtube/v3/videos?key=AIzaSyAKK2tgkGHcae1DaJ6ikJYy4aW2kfB910U&part=snippet&id="+bu;
+    let url="https://youtube.googleapis.com/youtube/v3/videos?key=" + process.env.YTAPI + "&part=snippet&id="+bu;
     const [videoTitle, setVideoTitle]=useState("");
     axios.get(url).then(function(response){
-        // console.log(response.data);
+        // console.log(response.data);no
         setVideoTitle(response.data.items[0].snippet.title);
         
         // console.log(fetchedDetails);
