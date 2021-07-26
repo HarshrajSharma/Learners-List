@@ -21,16 +21,20 @@ let ytArray=[
     '738Dy3D-q-E',
     'fBT0VKkqvtY',
     '3tbjwaGC-ng',
-    'qUDp8IUbZto',
+    'qUDp8IUbZto', 
+    '1QybAZMCYhA',
+    '738Dy3D-q-E',
+    'fBT0VKkqvtY',
+    '3tbjwaGC-ng',
+    'qUDp8IUbZto', 
     '1QybAZMCYhA' 
   ];
-
 
 function DataFetch(){
    
 
     axios.get("http://localhost:5000/videoIdArray").then(function(response){
-    console.log(response);
+    // console.log(response.data.videoID);
 
     });
 }
@@ -42,10 +46,15 @@ let [embedLink, setEmbedLink]= "";
 function VidButton(bu){
 
     
-    let url="https://youtube.googleapis.com/youtube/v3/videos?key=" + process.env.YTAPI + "&part=snippet&id="+bu;
+
+    
+    const url="https://youtube.googleapis.com/youtube/v3/videos?key="+ process.env.REACT_APP_YTAPI + "&part=snippet&id="+bu;
     const [videoTitle, setVideoTitle]=useState("");
+
     axios.get(url).then(function(response){
-        // console.log(response.data);no
+
+        // console.log(response.data.items[0].snippet.title)
+        
         setVideoTitle(response.data.items[0].snippet.title);
         
         // console.log(fetchedDetails);
@@ -53,7 +62,7 @@ function VidButton(bu){
         // console.log(videoTitle);
         });
 
-
+        
     return(
         <li>
             <input type="checkbox" />
@@ -67,25 +76,30 @@ function Video(){
     let srcLink="https://www.youtube.com/embed/"+ embedLink + ""; 
     return(
         
-            <iframe width="980px" height="551px" src={srcLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="712px" height="400px" src={srcLink} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
         
     );
 }
 
 function VideoDashboard(){
     DataFetch();
-    
     if (ytArray.length===0) {
         return(<LinkSearch/>);
     }else{
       return(
-          <div className="videoDashboard" >
-              <div className="activeVideo" >{Video()}</div>
-              <div className="buttonList" ><ul>{ytArray.map(VidButton)}</ul></div>
-
+          <div className="middle" >
+              <div className="video" >{Video()}</div>
+              <div className="sidebar" >
+                  <p>Course Content</p>
+                  <div className="scroll">
+                    <ul>{ytArray.map(VidButton)}</ul>
+                  </div>
+              </div>
+              
           </div>
       );
     }
 }
+// console.log(test);
 export {ytArray};
 export default VideoDashboard;
