@@ -14,7 +14,7 @@ function LinkSearch() {
     let reload = true;
     //Sending the playlist link to backend
     axios
-      .post("http://localhost:5000/linkSearch", { playlistLink: link })
+      .post("https://aqueous-wave-27253.herokuapp.com/linkSearch", { playlistLink: link })
       .then((response) => {
         // console.log(response);
 
@@ -27,7 +27,7 @@ function LinkSearch() {
 
       .finally(() => {
         axios
-          .post("http://localhost:5000/videoIdArray", {
+          .post("https://aqueous-wave-27253.herokuapp.com/videoIdArray", {
             playlistID: localStorage.getItem("playlistID"),
           })
           .then(function (r) {
@@ -48,7 +48,7 @@ function LinkSearch() {
           )
           .finally(() => {
             axios
-              .post("http://localhost:5000/videoTitle", {
+              .post("https://aqueous-wave-27253.herokuapp.com/videoTitle", {
                 playlistID: localStorage.getItem("playlistID"),
               })
               .then(function (received) {

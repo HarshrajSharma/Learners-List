@@ -36,6 +36,16 @@ function VideoDashboard() {
   function Video() {
     [embedLink, setEmbedLink] = useState(videoIdArray[0][0]);
     [currentVideoTitle, setCurrentVideoTitle] = useState(videoTitleArray[0][0]);
+    useEffect(()=>{
+      if (localStorage.getItem("resumeEmbedLink")!==null) {
+        setEmbedLink(localStorage.getItem("resumeEmbedLink"));
+      }
+      if (localStorage.getItem("resumeCurrentTitle")!==null) {
+        setCurrentVideoTitle(localStorage.getItem("resumeCurrentTitle"));
+      }
+
+    },[]);
+    
     let srcLink = "https://www.youtube.com/embed/" + embedLink + "";
     return (
       <iframe
@@ -75,8 +85,8 @@ function VideoDashboard() {
     useEffect(() => {
       console.log("Hello");
       if (JSON.parse(localStorage.getItem("check" + i)) === true) {
-        document.getElementById("bu" + i).style.backgroundColor = "#059862"
-        document.getElementById("done" + i).style.backgroundColor = "#059862"
+        document.getElementById("bu" + i).style.backgroundColor = "#8BE78B"
+        document.getElementById("done" + i).style.backgroundColor = "#8BE78B"
       } else {
         document.getElementById("bu" + i).style.backgroundColor = "#EFEFEF"
         document.getElementById("done" + i).style.backgroundColor = "#EFEFEF"
@@ -101,8 +111,8 @@ function VideoDashboard() {
 
             } else if (JSON.parse(localStorage.getItem("check" + i)) === false) {
               localStorage.setItem("check" + i, true);
-              document.getElementById("bu" + i).style.backgroundColor = "#059862";
-              document.getElementById("done" + i).style.backgroundColor = "#059862";
+              document.getElementById("bu" + i).style.backgroundColor = "#8BE78B";
+              document.getElementById("done" + i).style.backgroundColor = "#8BE78B";
               document.getElementById("done" + i).value = "✔️";
 
             }
@@ -113,6 +123,8 @@ function VideoDashboard() {
           onClick={() => {
             setEmbedLink(bu);
             setCurrentVideoTitle(videoTitleArray[0][i]);
+            localStorage.setItem("resumeEmbedLink", bu);
+            localStorage.setItem("resumeCurrentTitle", videoTitleArray[0][i]);
           }}
         >
           {videoTitle}
