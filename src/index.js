@@ -1,23 +1,16 @@
 import React from "react";
-import ReactDOM, { render } from "react-dom";
+import ReactDOM from "react-dom";
 import Header from "./components/Header"
 import LinkSearch from "./components/LinkSearch"
-import MainContent from "./components/MainContent";
 import VideoDashboard from "./components/VideoDashboard"
-import TestVideoDashboard from "./components/TestVideoDashboard"
-import Middle from "./components/Middle"
 
 
-// localStorage.setItem("playlistID", "ABCD ID");
-
-//Clears storage
-// localStorage.clear();    
 //_______________________________________________________________
-const playlistID=localStorage.getItem("playlistID");
+const playlistID = localStorage.getItem("playlistID");
 console.log(playlistID);
-if (playlistID===null) {
+if (playlistID === null) {
     console.log("Storage empty")
-}else {
+} else {
     console.log("Storage full")
 }
 //_______________________________________________________________
@@ -25,27 +18,23 @@ if (playlistID===null) {
 ReactDOM.render(
 
     <div>
-        <Header/>
-        {/* <MainContent/> */}
-        {/* <Middle/> */}
-        
-        {/* <VideoDashboard/> */}
+        <Header />
         {localCheck()}
        
-        
+
     </div>
-    ,document.getElementById("root")
+    , document.getElementById("root")
 );
 
 
 function localCheck() {
-    if(playlistID===null){
-        return(
-            <LinkSearch/>
+    if (playlistID === null) {
+        return (
+            <LinkSearch />
         );
-    }else{
-        return(
-            <TestVideoDashboard/>
+    } else {
+        return (
+            <VideoDashboard />
         );
     }
 }

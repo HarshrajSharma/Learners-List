@@ -1,20 +1,19 @@
 import React from "react";
-
+import icon from "../images/icon.png"
 
 function Navigation(){
     return(
         <div className="top" >
-            <h1>Hello</h1>
-            <button onClick={()=>{
+            <div id="iconDiv" >
+                <img id="icon" src={icon} alt=""/>
+                {/* <h1>Learner's List</h1> */}
+                <h2>Made with ❤️ by <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/harsh-sharma-88a210150/" >Harsh</a></h2>
+            </div>
+            
+            <button id="resetButton" onClick={()=>{
                 localStorage.clear();
                 window.location.reload();
             }} >Reset</button>
-            <button onClick={()=>{
-                // localStorage.setItem("playlistID", "ABCD ID");
-                localStorage.setItem("playlistID", "PL-Jc9J83PIiE-TR27GB7V5TBLQRT5RnSl");
-                window.location.reload();
-
-            }} >Check</button>
         </div>
     );
 }
