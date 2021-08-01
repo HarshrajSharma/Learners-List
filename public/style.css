@@ -1,3 +1,8 @@
+html{
+    border: 0%;
+    margin: 0%;
+    padding: 0%;
+}
 body{
     border: 0%;
     margin: 0%;
@@ -107,7 +112,7 @@ body{
     overflow-y: scroll;
     height: 548px;
 }
-iframe{
+#mainVideo{
     border: 0ch;
     position: absolute;
     top: 0;
@@ -209,7 +214,27 @@ iframe{
     font-size: 40px;
     font-weight: bolder;
 }
+#userGuideHeading{
+    text-align: center;
+    font-size: 40px;
+    font-weight:800;
+}
 
+#userGuideVideo{
+    text-align: center;
+}
+#androidLink{
+    text-align: center;
+    font-size: 40px;
+    font-weight:800;
+}
+#androidVideo{
+    text-align: center;
+}
+hr{
+    background-color: #E3004F;
+    height: 11px;
+}
 @media  screen and (max-width: 1068px) {
     #formDiv{
         flex-direction: column;
@@ -221,11 +246,39 @@ iframe{
 }
 
 /*Footer*/
-.footer{
-    background-color: #14171C; 
-    width: 100%;
+footer{
+    background-color:#252525; 
+    display: flex;
+    color: white;
+}
+#about{
+    width: 50%;
+    text-align: center;
+
+    border-right: white 0.5px solid;
+}
+#about h1{
+   color: #E3004F;
+}
+#about h3{
     margin: 0;
-    border: 0;
+    font-weight: 100;
+
+    padding: 5px 5px 5px 5px;
+}
+#socialLinks{
+    width: 50%;
+    text-align:left;
+    border-left: white 0.5px solid;
+    padding-left: 51px;
+}
+#socialLinks a{
+    color: white;
+    text-decoration: none;
+}
+#githubIcon{
+    /* font-size:48px; */
+    color:#E3004F;
 }
 /*Sweet Alert Npm Package*/
 .swal-overlay {

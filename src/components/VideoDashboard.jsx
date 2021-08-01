@@ -49,6 +49,8 @@ function VideoDashboard() {
     let srcLink = "https://www.youtube.com/embed/" + embedLink + "";
     return (
       <iframe
+
+        id="mainVideo"
         src={srcLink}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

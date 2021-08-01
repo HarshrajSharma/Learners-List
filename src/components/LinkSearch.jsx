@@ -92,6 +92,30 @@ function LinkSearch() {
           <button id="linkSearchbutton" type="submit">Go</button>
         </form>
       </div>
+      <hr  />
+      <h1 id="userGuideHeading" >User Guide</h1>
+      <div id="userGuideVideo" >
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0QK-BeJrMT8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <hr />
+      <h1 id="androidLink" >Copy YouTube playlist link on the Android application.</h1>
+      <div id="androidVideo" >
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Gv0Qss2TY8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <footer>
+        <div id="about" >
+          <h1>About</h1>
+          <h3>Learner's List was developed to provide an easy platform for the YouTube learners. It allows us to keep track of the videos we have watched and saves us from other distractive YouTube features.</h3>
+        </div>
+        <div id="socialLinks" >
+          <h2><i id="githubIcon" class="fa fa-github" s><a  target="_blank" rel="noreferrer" href="https://github.com/HarshrajSharma"> GitHub</a></i></h2>
+          <h2><i id="githubIcon" class="fa fa-linkedin" s><a  target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/harsh-sharma-88a210150/"> LinkedIn</a></i></h2>
+          <h2>&copy; 2021</h2>
+          <h2>Made with ❤️ by Harsh</h2>
+        </div>
+      </footer>
+
+      
     </div>
   );
 }
