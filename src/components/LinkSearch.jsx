@@ -16,13 +16,13 @@ function LinkSearch() {
     axios
       .post("https://aqueous-wave-27253.herokuapp.com/linkSearch", { playlistLink: link })
       .then((response) => {
-        // console.log(response);
+        // console.log(response)
 
         localStorage.removeItem("playlistID");
         localStorage.removeItem("videoIdArray");
         localStorage.setItem("playlistID", response.data);
         console.log(localStorage.getItem("playlistID"));
-        // window.location.reload();
+        // window.location.reload()
       })
 
       .finally(() => {
@@ -31,7 +31,7 @@ function LinkSearch() {
             playlistID: localStorage.getItem("playlistID"),
           })
           .then(function (r) {
-            //   console.log(response.data.videoID);
+            //   console.log(response.data.videoID)
             console.log(r.data);
             localStorage.removeItem("videoIdArray");
 
@@ -52,7 +52,7 @@ function LinkSearch() {
                 playlistID: localStorage.getItem("playlistID"),
               })
               .then(function (received) {
-                //   console.log(response.data.videoID);
+                //   console.log(response.data.videoID)
                 console.log(received.data);
                 localStorage.removeItem("videoTitleArray");
 
@@ -67,10 +67,7 @@ function LinkSearch() {
               });
           });
       })
-
-    // setTimeout(() => {
-    //    window.location.reload();
-    // }, 2000);
+      
   }
 
   return (

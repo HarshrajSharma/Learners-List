@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import LinkSearch from "./LinkSearch";
-
 import axios from "axios";
 
 import ReactGA from 'react-ga';
@@ -26,7 +24,7 @@ const [ytArray, setYtArray] = useState([]);
             <div>
                 <button onClick={() => {
                     axios.get("http://localhost:5000/videoIdArray").then(function (response) {
-                        // console.log(response.data.videoID);
+                        // console.log(response.data.videoID)
                         let tempArray = [];
                         response.data.videoID.map((ID) => {
 

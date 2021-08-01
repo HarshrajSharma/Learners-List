@@ -23,10 +23,10 @@ function VideoDashboard() {
 
   //VideoIdArray is stored in local storage and will be fetched from local storage with below code
   videoIdArray = [JSON.parse(localStorage.getItem("videoIdArray"))]
-  // console.log(videoIdArray);
+  // console.log(videoIdArray)
   videoTitleArray = [JSON.parse(localStorage.getItem("videoTitleArray"))];
 
-  // console.log(videoIdArray[0].length);
+  // console.log(videoIdArray[0].length)
 
 
 
@@ -81,7 +81,7 @@ function VideoDashboard() {
   function VidButton(bu) {
 
     let videoTitle = "";
-    // console.log(videoIdArray[0].indexOf(bu));
+    // console.log(videoIdArray[0].indexOf(bu))
     let i = videoIdArray[0].indexOf(bu);
     videoTitle = videoTitleArray[0][i];
 
@@ -163,6 +163,6 @@ function VideoDashboard() {
     );
   }
 }
-// console.log(test);
-// export {ytArray};
+
+
 export default VideoDashboard;
