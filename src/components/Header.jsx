@@ -1,6 +1,11 @@
 import React from "react";
 import icon from "../images/icon.png"
 
+import ReactGA from 'react-ga';
+
+const trackingId = "G-7H2VFBV0XS";
+ReactGA.initialize(trackingId);
+
 function Navigation(){
     return(
         <div className="top" >

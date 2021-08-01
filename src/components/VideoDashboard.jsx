@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import LinkSearch from "./LinkSearch";
 
+import ReactGA from 'react-ga';
 
+const trackingId = "G-7H2VFBV0XS";
+ReactGA.initialize(trackingId);
 
 function VideoDashboard() {
 

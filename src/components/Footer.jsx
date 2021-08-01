@@ -1,5 +1,8 @@
 import React from "react";
+import ReactGA from 'react-ga';
 
+const trackingId = "G-7H2VFBV0XS";
+ReactGA.initialize(trackingId);
 
 function Footer(){
     return(

@@ -5,6 +5,10 @@ import LinkSearch from "./components/LinkSearch"
 import VideoDashboard from "./components/VideoDashboard"
 
 
+import ReactGA from 'react-ga';
+
+const trackingId = "G-7H2VFBV0XS";
+ReactGA.initialize(trackingId);
 //_______________________________________________________________
 const playlistID = localStorage.getItem("playlistID");
 console.log(playlistID);
