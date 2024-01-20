@@ -23,7 +23,7 @@ const [ytArray, setYtArray] = useState([]);
         return (
             <div>
                 <button onClick={() => {
-                    axios.get("http://localhost:5000/videoIdArray").then(function (response) {
+                    axios.get(`${process.env.REACT_APP_SERVER}/videoIdArray`).then(function (response) {
                         // console.log(response.data.videoID)
                         let tempArray = [];
                         response.data.videoID.map((ID) => {
